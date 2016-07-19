@@ -4,7 +4,7 @@ define( function () {
 
     /*
 
-        Draw a rectangle with symmetrical half circles it's ends on the
+        Draw a rectangle with symmetrical half circles on it's ends on the
         provided canvas 2d context. Uses the canvas 2d arc() method.
 
         ctx   context2D   Canvas context to draw to
