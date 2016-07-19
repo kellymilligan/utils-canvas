@@ -14,15 +14,15 @@ define( function () {
         Adapted from http://stackoverflow.com/a/3368118
 
         ctx   context2D   Canvas context to draw to
-        x     int         X position to start draw
-        y     int         Y position to start draw
-        w     int         Width of the rectangle
-        h     int         Height of the rectangle
-        r     int         Radius of all 4 corners, or the top left corner if others are provided
+        x     num         X position to start draw
+        y     num         Y position to start draw
+        w     num         Width of the rectangle
+        h     num         Height of the rectangle
+        r     num         Radius of all 4 corners, or the top left corner if others are provided
 
-        tr    int         Optional - Radius of the top right corner
-        br    int         Optional - Radius of the bottom right corner
-        bl    int         Optional - Radius of the bottom left corner
+        tr    num         Optional - Radius of the top right corner
+        br    num         Optional - Radius of the bottom right corner
+        bl    num         Optional - Radius of the bottom left corner
 
     */
 
