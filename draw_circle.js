@@ -8,8 +8,8 @@ define( function () {
         By default a full, closed-path circle is drawn.
 
         ctx           context2D   Canvas context to draw to
-        x             num         X position at *CENTER* of circle
-        y             num         Y position at *CENTER* of circle
+        x             num         X position at centre of circle
+        y             num         Y position at centre of circle
         r             num         Radius of circle
 
         c             bool        optional - Close path flag
