@@ -1,4 +1,12 @@
-define( function () {
+define([
+
+    '../utils-math/point/point_on_circle'
+
+], function (
+
+    pointOnCircle
+
+) {
 
     'use strict';
 
@@ -29,19 +37,17 @@ define( function () {
         if ( inDegrees === true ) { aOffset = ( Math.PI / 180 ) * aOffset; }
 
         var points = [];
-        var pX, pY, a;
+        var point, a;
 
         // Find points on circle
-        // Note: could use point_on_circle math util as a dependency to abstract this out.
         for ( var i = 0; i < n; i++ ) {
 
             a = aOffset + ( ( 2 * Math.PI ) / n ) * i;
 
-            pX = x + r * Math.cos( a );
-            pY = y + r * Math.sin( a );
+            point = pointOnCircle( x, y, r, a );
 
-            points.push( pX );
-            points.push( pY );
+            points.push( point.x );
+            points.push( point.y );
         }
 
         // Draw polygon
