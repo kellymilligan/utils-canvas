@@ -20,7 +20,7 @@ define([
         r             num         Radius of circle
         p             num         Number of points that form the polygon, minimum of 3
 
-        aOffset       deg/rad     optional - Angle offset of polygon (i.e. where the first point starts)
+        aOffset       deg/rad     optional - Angle of rotation on the polygon
         inDegrees     bool        optional - Flag whether aOffset is passed in as degrees
 
     */
@@ -42,13 +42,16 @@ define([
         // Find points on circle
         for ( var i = 0; i < n; i++ ) {
 
-            a = aOffset + ( ( 2 * Math.PI ) / n ) * i;
+            // Start at -90 degrees to align first point to top
+            a = ( Math.PI * -0.5 ) + aOffset + ( ( 2 * Math.PI ) / n ) * i;
 
             point = pointOnCircle( x, y, r, a );
 
             points.push( point.x );
             points.push( point.y );
         }
+
+        // console.log( points );
 
         // Draw polygon
         ctx.beginPath();
@@ -60,6 +63,7 @@ define([
         }
 
         ctx.closePath();
+
     };
 
 });
