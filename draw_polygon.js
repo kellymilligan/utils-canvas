@@ -18,7 +18,7 @@ define([
         x             num         X position at centre of circle
         y             num         Y position at centre of circle
         r             num         Radius of circle
-        p             num         Number of points that form the polygon, minimum of 3
+        n             num         Number of points that form the polygon, minimum of 3
 
         aOffset       deg/rad     optional - Angle of rotation on the polygon
         inDegrees     bool        optional - Flag whether aOffset is passed in as degrees
