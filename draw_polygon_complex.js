@@ -129,8 +129,6 @@ define([
             var tailPoint = points[ tailIndex ];
             var tailLerpPoint = lerpPoint2d( endPoint, tailPoint, endProgress );
 
-            // console.log(endPoint, endProgress);
-
             ctx.lineTo( tailLerpPoint.x, tailLerpPoint.y );
 
             if ( closePath ) { ctx.closePath(); }
