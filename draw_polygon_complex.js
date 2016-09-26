@@ -27,7 +27,7 @@ define([
 
         aS            deg/rad     optional - Angle at which polygon starts drawing
         aL            deg/rad     optional - Length of polygon from starting angle
-        aO            deg/rad     optional - Offset angle at which to drawing the polygon
+        aO            deg/rad     optional - Angle offset to rotate the polygon by
         cc            bool        optional - Flag whether to draw counter-clockwise
         closePath     bool        optional - Flag whether to close the path internally
         inDegrees     bool        optional - Flag whether angles are passed in as degrees
