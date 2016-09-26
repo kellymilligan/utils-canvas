@@ -91,8 +91,7 @@ define([
         }
         // Draw a partial polygon (if length is more than zero)
         else if ( aL > 0 ) {
-
-            // var startIndex = Math.min( parseInt( aS / ( TWO_PI / n ), 10 ), n - 1 ); // Clamp to avoid floating point errors
+            
             var startIndex = parseInt( aS / ( TWO_PI / n ), 10 );
             var startPoint = points[ startIndex ];
             var startProgress = ( aS % ( TWO_PI / n ) ) / ( TWO_PI / n );
