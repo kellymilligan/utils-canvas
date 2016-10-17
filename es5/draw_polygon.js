@@ -51,8 +51,6 @@ define([
             points.push( point.y );
         }
 
-        // console.log( points );
-
         // Draw polygon
         ctx.beginPath();
         ctx.moveTo( points[0], points[1] );
