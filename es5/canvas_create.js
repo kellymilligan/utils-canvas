@@ -24,7 +24,7 @@ define( function () {
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
 
-        var pixelRatio = ( window.devicePixelRatio ) ? window.devicePixelRatio : 1;
+        var pixelRatio = Math.max( ( window.devicePixelRatio ) ? window.devicePixelRatio : 1, 1 );
 
         canvas.width = w;
         canvas.height = h;
@@ -34,11 +34,7 @@ define( function () {
 
         if ( useDpi ) {
 
-            ctx._useDpi = useDpi;
-
             if ( dpiMax ) {
-
-                ctx._dpiMax = useDpi;
 
                 pixelRatio = Math.min( pixelRatio, dpiMax );
             }

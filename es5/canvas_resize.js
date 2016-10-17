@@ -4,7 +4,7 @@ define( function () {
 
     /*
 
-        Resize a canvas previously created using the create_canvas.js util
+        Resize the canvas of the supplied context
 
         ctx      context2D     Canvas context to resize
         w        num           new width of the canvas
@@ -14,7 +14,7 @@ define( function () {
 
     return function (ctx, w, h) {
 
-        var pixelRatio = ( window.devicePixelRatio ) ? window.devicePixelRatio : 1;
+        var pixelRatio = Math.max( ( window.devicePixelRatio ) ? window.devicePixelRatio : 1, 1 );
 
         ctx.canvas.width = w;
         ctx.canvas.height = h;
@@ -22,11 +22,11 @@ define( function () {
         ctx.canvas.style.width = w + 'px';
         ctx.canvas.style.height = h + 'px';
 
-        if ( ctx._useDpi ) {
+        if ( useDpi ) {
 
-            if ( ctx._dpiMax ) {
+            if ( dpiMax ) {
 
-                pixelRatio = Math.min( pixelRatio, ctx._dpiMax );
+                pixelRatio = Math.min( pixelRatio, dpiMax );
             }
 
             ctx.canvas.width = w * pixelRatio;
