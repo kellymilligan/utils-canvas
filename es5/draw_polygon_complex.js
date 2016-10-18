@@ -91,7 +91,7 @@ define([
         }
         // Draw a partial polygon (if length is more than zero)
         else if ( aL > 0 ) {
-            
+
             var startIndex = parseInt( aS / ( TWO_PI / n ), 10 );
             var startPoint = points[ startIndex ];
             var startProgress = ( aS % ( TWO_PI / n ) ) / ( TWO_PI / n );
@@ -111,8 +111,6 @@ define([
 
             // Draw steps
             for ( j = 1; j <= fullSteps; j++ ) {
-
-                if ( fullSteps > n ) { console.log(aL, fullSteps);}
 
                 nextIndex = ( startIndex + j ) % n;
                 nextPoint = points[ nextIndex ];
