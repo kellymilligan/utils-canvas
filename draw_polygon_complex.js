@@ -1,6 +1,3 @@
-import pointOnCircle from '../math/point/point_on_circle';
-import pointLerp2d from '../math/point/point_lerp_2d';
-
 /*
 
     Draw a symmetrical 2D polygon on the provided canvas 2d context.
@@ -22,6 +19,9 @@ import pointLerp2d from '../math/point/point_lerp_2d';
     inDegrees     bool        optional - Flag whether angles are passed in as degrees
 
 */
+
+import pointOnCircle from '../math/point/point_on_circle';
+import pointLerp2d from '../math/point/point_lerp_2d';
 
 export default function (
 
