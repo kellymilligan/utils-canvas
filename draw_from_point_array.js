@@ -25,7 +25,7 @@ export default function (
     ctx.translate( x, y );
     ctx.beginPath();
 
-    for ( let i = 0, length = p.length; i < length; i++ ) {
+    for ( let i = 0, length = points.length; i < length; i++ ) {
 
         let p = points[ i ];
 
