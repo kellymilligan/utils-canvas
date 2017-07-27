@@ -1,44 +1,38 @@
 /*
     Draw a shape from an array of points on the provided canvas 2d context.
-    Points must be objects with an 'x' and 'y' parameter.
+    Points in the array must be objects with 'x' and 'y' properties.
 
-    ctx   context2D   Canvas context to draw to
-    x     num         origin X position of shape's coordinate space
-    y     num         origin Y position of shape's coordinate space
-    p     arr         Array of point objects to draw
+    ctx         context2D      Canvas context to draw to
+    points      Array          Array of point coordinate pairs to construct from
+    x           Number         origin X position of shape's coordinate space
+    y           Number         origin Y position of shape's coordinate space
 
-    c     bool        optional - Close path flag
+    close       Boolean        optional - Flag whether to close the path
 
 */
 
 export default function (
 
-    ctx, x, y, p,
+    ctx, points,
+    x = 0,
+    y = 0,
 
-    c = false
+    close = false
 
 ) {
 
-    // Draw circle
     ctx.save();
     ctx.translate( x, y );
     ctx.beginPath();
 
     for ( let i = 0, length = p.length; i < length; i++ ) {
 
-        let point = p[ i ];
+        let p = points[ i ];
 
-        if ( i === 0 ) {
-
-            ctx.moveTo( point.x, point.y );
-        }
-        else {
-
-            ctx.lineTo( point.x, point.y );
-        }
+        i === 0 ? ctx.moveTo( p.x, p.y ) : ctx.lineTo( p.x, p.y );
     }
 
-    if ( c ) { ctx.closePath(); }
+    if ( close ) { ctx.closePath(); }
     ctx.restore();
 
 }
