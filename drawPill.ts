@@ -1,8 +1,15 @@
+export type drawPillConfig = {
+  x?: number;
+  y?: number;
+  width: number;
+  height: number;
+  radius?: number | number[];
+};
+
 /**
  * Draw a rectangle with circular side caps, commonly used for buttons.
  *
  * @param ctx Canvas 2D context to draw upon
- * @param param1 Configuration object
  * @param config.x The x-axis coordinate of the rectangle's starting point
  * @param config.y The y-axis coordinate of the rectangle's starting point
  * @param config.width The rectangle's width
@@ -42,12 +49,15 @@ export const drawPill = (
   ctx.closePath();
 };
 
-export type drawPillConfig = {
-  x?: number;
-  y?: number;
-  width: number;
-  height: number;
-  radius?: number | number[];
+/**
+ * Convenience function to "fill" a pill drawn with drawPill()
+ */
+export const fillPill = (
+  ctx: CanvasRenderingContext2D,
+  config?: drawPillConfig,
+) => {
+  drawPill(ctx, config);
+  ctx.fill();
 };
 
 export default drawPill;

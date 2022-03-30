@@ -1,3 +1,11 @@
+export type drawRoundedRectConfig = {
+  x?: number;
+  y?: number;
+  width: number;
+  height: number;
+  radius?: number | number[];
+};
+
 /**
  * Draw a rounded rectangle on the provided canvas 2d context.
  * Radius can be supplied as a single number, applied to all
@@ -17,7 +25,7 @@ export const drawRoundedRect = (
   ctx: CanvasRenderingContext2D,
   { x = 0, y = 0, width, height, radius = 10 }: drawRoundedRectConfig = {
     width: 100,
-    height: 50,
+    height: 100,
   },
 ) => {
   // Radius multiplier to render as closely as possible to css border-radius apperance
@@ -44,12 +52,15 @@ export const drawRoundedRect = (
   ctx.closePath();
 };
 
-export type drawRoundedRectConfig = {
-  x?: number;
-  y?: number;
-  width: number;
-  height: number;
-  radius?: number | number[];
+/**
+ * Convenience function to "fill" a rounded rect drawn with drawRoundedRect()
+ */
+export const fillRoundedRect = (
+  ctx: CanvasRenderingContext2D,
+  config?: drawRoundedRectConfig,
+) => {
+  drawRoundedRect(ctx, config);
+  ctx.fill();
 };
 
 export default drawRoundedRect;
